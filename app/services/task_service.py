@@ -13,8 +13,8 @@ class TaskService:
     def get_task(self, task_id: int) -> Task | None:
         return self._db.query(Task).filter(Task.id == task_id).first()
 
-    def create_task(self, name: str) -> Task:
-        task = Task(name=name)
+    def create_task(self, title: str, task_duration: str, assignee_name) -> Task:
+        task = Task(title=title, task_duration=task_duration, assignee_name=assignee_name)
         self._db.add(task)
         self._db.commit()
         self._db.refresh(task)

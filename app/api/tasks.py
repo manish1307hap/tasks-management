@@ -23,7 +23,7 @@ def get_tasks(service: TaskService = Depends(get_task_service)):
 
 @router.post("/tasks", response_model=TaskRead)
 def create_task(task: TaskCreate, service: TaskService = Depends(get_task_service)):
-    return service.create_task(task.name)
+    return service.create_task(task.title, task.task_duration, task.assignee_name)
 
 
 @router.get("/tasks/{task_id}", response_model=TaskRead)
