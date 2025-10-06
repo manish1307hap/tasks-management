@@ -7,10 +7,7 @@ from app.db.schema import Base, engine
 
 setup_logging()
 
-
-
 Base.metadata.create_all(bind=engine)
-
 
 app = FastAPI(title=config.app_name)
 
