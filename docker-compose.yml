@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    container_name: tasks-management-web-1
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app              # mounts current project folder
+    environment:
+      - DB_USER=admin
+      - DB_PASSWORD=secret
+      - DB_NAME=test.db
+    restart: unless-stopped

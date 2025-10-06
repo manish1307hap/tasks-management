@@ -1,0 +1,9 @@
+fastapi==0.118.0
+uvicorn==0.37.0
+sqlalchemy==2.0.43
+dotenv
+pydantic
+httpx
+pydantic-settings
+python-dotenv
+alembic
